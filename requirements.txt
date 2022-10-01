@@ -1,0 +1,6 @@
+colorama
+slowprint
+discord_webhook
+base58
+requests
+readchar
